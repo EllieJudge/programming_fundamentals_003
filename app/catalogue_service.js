@@ -56,7 +56,8 @@ function getBooksByAuthor(author) {
 }
 
 function checkQuantity(title, quantity) {
-  // Your code here
+  return catalogue.some(el => (el.title === title && el.quantity >= quantity))
+  ? true : false;
 }
 
 module.exports = {

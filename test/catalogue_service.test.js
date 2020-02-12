@@ -49,7 +49,7 @@ describe("catalogueService", () => {
   });
 });
 
-describe.only("catalogueService", () => {
+describe("catalogueService", () => {
   describe("catalogueService.getBooksByAuthor", () => {
     test("returns an array of books by given author", () => {
       expect(catalogueService.getBooksByAuthor("Robert Bolaño")).toEqual([
@@ -62,4 +62,11 @@ describe.only("catalogueService", () => {
   });
 });
 
-
+describe.only("catalogueService", () => {
+  describe("catalogueService.checkQuantity", () => {
+    test("returns `true` at least as many books in stock as the given quantity, and false otherwise", () => {
+      expect(catalogueService.checkQuantity("By Night In Chile", 4)).toBe(true);
+      expect(catalogueService.checkQuantity("By Night In Chile", 100)).toBe(false);
+  });
+});
+});
